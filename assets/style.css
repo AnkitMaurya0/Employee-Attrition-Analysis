@@ -1,0 +1,564 @@
+/* ==========================================================
+   Employee Attrition Dashboard
+   Professional Dark Theme — Complete Design System
+   Streamlit Compatible
+========================================================== */
+
+/* ---------------- Google Fonts ---------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ---------------- Design Tokens ---------------- */
+
+:root {
+    /* Backgrounds */
+    --bg:          #0b0f1a;
+    --bg-elevated: #111827;
+    --card:        #1a2235;
+    --card-hover:  #1e293b;
+    --border:      #1e3a5f;
+    --border-soft: #2a3a52;
+
+    /* Brand */
+    --primary:     #2563eb;
+    --primary-dim: rgba(37, 99, 235, 0.12);
+    --primary-glow:rgba(37, 99, 235, 0.25);
+
+    /* Semantic */
+    --success:     #22c55e;
+    --warning:     #f59e0b;
+    --danger:      #ef4444;
+    --info:        #38bdf8;
+
+    /* Text */
+    --text:        #f8fafc;
+    --text2:       #cbd5e1;
+    --muted:       #64748b;
+    --muted2:      #94a3b8;
+
+    /* Misc */
+    --radius:      14px;
+    --radius-sm:   10px;
+    --shadow:      0 4px 24px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 24px rgba(37, 99, 235, 0.15);
+}
+
+/* ---------------- Base ---------------- */
+
+html,
+body,
+[class*="css"] {
+    font-family: "DM Sans", sans-serif;
+}
+
+.stApp {
+    background: var(--bg);
+}
+
+/* ---------------- Hide chrome ---------------- */
+
+#MainMenu { visibility: hidden; }
+footer    { visibility: hidden; }
+
+/* ---------------- Container ---------------- */
+
+.block-container {
+    max-width: 1400px;
+    padding: 2rem 2.5rem;
+}
+
+/* ---------------- Sidebar ---------------- */
+
+section[data-testid="stSidebar"] {
+    background: var(--bg-elevated);
+    border-right: 1px solid var(--border);
+}
+
+section[data-testid="stSidebar"] * {
+    color: var(--text2);
+}
+
+/* ---------------- Sidebar Nav ---------------- */
+
+[data-testid="stSidebarNav"] {
+    padding-top: 10px;
+}
+
+[data-testid="stSidebarNav"] a {
+    border-radius: var(--radius-sm);
+    margin-bottom: 4px;
+    transition: background 0.2s, color 0.2s;
+    color: var(--text2) !important;
+}
+
+[data-testid="stSidebarNav"] a:hover {
+    background: var(--card);
+}
+
+[data-testid="stSidebarNav"] a[aria-current="page"] {
+    background: var(--primary);
+    color: white !important;
+}
+
+/* ---------------- Typography ---------------- */
+
+h1 { color: var(--text); font-size: 2rem; font-weight: 700; }
+h2 { color: var(--text); }
+h3 { color: var(--text); }
+h4 { color: var(--text2); }
+p  { color: var(--text2); line-height: 1.6; }
+
+/* ============================================================
+   BRAND HEADER
+   Usage: .brand-wrap > .brand-icon + div > .brand-name + .brand-tagline
+============================================================ */
+
+.brand-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, var(--card) 0%, rgba(37,99,235,0.08) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 1.75rem;
+    box-shadow: var(--shadow);
+}
+
+.brand-icon {
+    font-size: 2.25rem;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 8px rgba(37,99,235,0.4));
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+.brand-tagline {
+    font-size: 0.85rem;
+    color: var(--muted2);
+    margin-top: 0.2rem;
+    font-weight: 400;
+}
+
+/* ============================================================
+   SECTION HEADER
+   Usage: .section-header > .icon + .title + optional .subtitle
+============================================================ */
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.section-header .icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.section-header .title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    flex: 1;
+}
+
+.section-header .subtitle {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-weight: 400;
+}
+
+/* ============================================================
+   METRIC CARD
+   Usage: .metric-card > .metric-label + .metric-value + .metric-delta
+============================================================ */
+
+.metric-card {
+    background: var(--card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.4rem;
+    transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    height: 100%;
+}
+
+.metric-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-glow);
+}
+
+.metric-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.1;
+    font-family: "JetBrains Mono", monospace;
+    margin-bottom: 0.4rem;
+}
+
+.metric-delta {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.15rem 0.5rem;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+/* Delta variants */
+.delta-up   { background: rgba(34,197,94,0.12);  color: #22c55e; }
+.delta-warn { background: rgba(245,158,11,0.12); color: #f59e0b; }
+.delta-down { background: rgba(239,68,68,0.12);  color: #ef4444; }
+.delta-info { background: rgba(56,189,248,0.12); color: #38bdf8; }
+
+/* Risk value colours */
+.risk-low    { color: #22c55e; }
+.risk-medium { color: #f59e0b; }
+.risk-high   { color: #ef4444; }
+
+/* ============================================================
+   CHART WRAPPER
+   Usage: .chart-wrap > .chart-title + .chart-subtitle + plotly
+============================================================ */
+
+.chart-wrap {
+    background: var(--card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.4rem;
+    margin-bottom: 0.5rem;
+    box-shadow: var(--shadow);
+}
+
+.chart-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.2rem;
+}
+
+.chart-subtitle {
+    font-size: 0.77rem;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+}
+
+/* ============================================================
+   RECOMMENDATION CARD
+   Usage: .rec-card > .rec-title + .rec-item*
+============================================================ */
+
+.rec-card {
+    background: var(--card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.4rem;
+    transition: border-color 0.25s;
+}
+
+.rec-card:hover {
+    border-color: var(--border);
+}
+
+.rec-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.rec-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.83rem;
+    color: var(--text2);
+    line-height: 1.55;
+    margin-bottom: 0.55rem;
+}
+
+.rec-item:last-child { margin-bottom: 0; }
+
+.bullet {
+    color: var(--primary);
+    font-size: 1.1rem;
+    line-height: 1.3;
+    flex-shrink: 0;
+    font-weight: 700;
+}
+
+/* ============================================================
+   INFO BOX
+   Usage: .info-box + optional .danger / .success / .warning
+============================================================ */
+
+.info-box {
+    background: var(--card);
+    border-left: 4px solid var(--primary);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0;
+}
+
+.info-box p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text2);
+    line-height: 1.6;
+}
+
+.info-box.danger {
+    border-left-color: var(--danger);
+    background: rgba(239,68,68,0.06);
+}
+
+.info-box.success {
+    border-left-color: var(--success);
+    background: rgba(34,197,94,0.06);
+}
+
+.info-box.warning {
+    border-left-color: var(--warning);
+    background: rgba(245,158,11,0.06);
+}
+
+/* ============================================================
+   BADGES
+   Usage: .badge.badge-blue / .badge-green / .badge-purple / .badge-amber / .badge-red
+============================================================ */
+
+.badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.2rem 0.55rem;
+    border-radius: 20px;
+    letter-spacing: 0.03em;
+}
+
+.badge-blue   { background: rgba(37,99,235,0.15);  color: #60a5fa; }
+.badge-green  { background: rgba(34,197,94,0.15);  color: #4ade80; }
+.badge-purple { background: rgba(139,92,246,0.15); color: #c084fc; }
+.badge-amber  { background: rgba(245,158,11,0.15); color: #fbbf24; }
+.badge-red    { background: rgba(239,68,68,0.15);  color: #f87171; }
+
+/* ============================================================
+   NATIVE STREAMLIT COMPONENT OVERRIDES
+============================================================ */
+
+/* Metric widget */
+[data-testid="metric-container"] {
+    background: var(--card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    padding: 1rem 1.2rem;
+    transition: border-color 0.2s;
+}
+
+[data-testid="metric-container"]:hover {
+    border-color: var(--primary);
+}
+
+[data-testid="stMetricLabel"] { color: var(--muted) !important; }
+[data-testid="stMetricValue"] { color: var(--text)  !important; }
+[data-testid="stMetricDelta"] { color: var(--muted2)!important; }
+
+/* Buttons */
+.stButton > button {
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: var(--primary);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: "DM Sans", sans-serif;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.stButton > button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(37,99,235,0.35);
+}
+
+.stButton > button:active {
+    transform: translateY(0);
+}
+
+/* Form submit button */
+.stFormSubmitButton > button {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+    font-size: 1.05rem !important;
+    height: 52px !important;
+    box-shadow: 0 4px 16px rgba(37,99,235,0.3);
+    transition: opacity 0.2s, transform 0.15s !important;
+}
+
+.stFormSubmitButton > button:hover {
+    opacity: 0.92;
+    transform: translateY(-1px) !important;
+}
+
+/* Inputs */
+input, textarea {
+    background: #1a2235 !important;
+    color: var(--text) !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+div[data-baseweb="select"] {
+    background: #1a2235 !important;
+    color: var(--text) !important;
+}
+
+/* Sliders */
+[data-testid="stSlider"] [data-baseweb="slider"] [role="slider"] {
+    background: var(--primary) !important;
+}
+
+/* Plotly charts */
+.js-plotly-plot {
+    border-radius: var(--radius-sm);
+}
+
+/* DataFrames */
+[data-testid="stDataFrame"] {
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+/* Images */
+img { border-radius: var(--radius-sm); }
+
+/* Code blocks */
+.stCodeBlock pre {
+    background: #0d1117 !important;
+    border: 1px solid var(--border-soft) !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+/* Expander */
+.streamlit-expanderHeader { color: var(--text) !important; }
+
+/* Divider */
+hr { border-color: var(--border-soft); margin: 1.5rem 0; }
+
+/* Alerts */
+[data-testid="stAlert"] {
+    border-radius: var(--radius-sm);
+    background: var(--card) !important;
+    border: 1px solid var(--border-soft) !important;
+}
+
+/* Tabs */
+[data-testid="stTabs"] [role="tab"] {
+    color: var(--muted2);
+    font-weight: 500;
+}
+
+[data-testid="stTabs"] [role="tab"][aria-selected="true"] {
+    color: var(--text);
+    border-bottom-color: var(--primary);
+}
+
+/* Checkbox & radio */
+[data-testid="stCheckbox"] label span,
+[data-testid="stRadio"]    label span { color: var(--text2); }
+
+/* Selectbox dropdown */
+[data-testid="stSelectbox"] label { color: var(--muted2) !important; }
+
+/* Number input */
+[data-testid="stNumberInput"] label { color: var(--muted2) !important; }
+
+/* Slider label */
+[data-testid="stSlider"] label { color: var(--muted2) !important; }
+
+/* ============================================================
+   SCROLLBAR
+============================================================ */
+
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-elevated); }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 20px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+/* ============================================================
+   UTILITY
+============================================================ */
+
+/* Legacy classes kept for backward-compat */
+.card {
+    background: var(--card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    transition: transform 0.25s, border-color 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+}
+
+.risk-card {
+    background: var(--card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.risk-value {
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: "JetBrains Mono", monospace;
+    color: var(--text);
+}
+
+.main-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.02em;
+}
+
+.sub-title {
+    text-align: center;
+    color: var(--muted);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.metric-title {
+    color: var(--muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}

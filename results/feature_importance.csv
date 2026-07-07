@@ -1,0 +1,32 @@
+Feature,Importance
+MonthlyIncome,0.14173177400783865
+YearsAtCompany,0.12356461108191522
+Age,0.1165262011995291
+OverTime_Yes,0.08340508186134227
+OverTime_No,0.07025548657604609
+SatisfactionIndex,0.06360880544720014
+DistanceFromHome,0.04400118133481805
+EnvironmentSatisfaction,0.0405642194424767
+PromotionRatio,0.03036743684372618
+JobSatisfaction,0.02792472269536353
+WorkLifeBalance,0.02466776499567139
+JobRole_Laboratory Technician,0.02030492177706822
+BusinessTravel_Travel_Frequently,0.01976778025095099
+YearsSinceLastPromotion,0.019317081749441065
+JobRole_Sales Representative,0.017905828847431308
+Education,0.017402024959902375
+Department_Research & Development,0.01701872130357167
+Department_Sales,0.016958216445369514
+TrainingTimesLastYear,0.014910606980864983
+JobRole_Sales Executive,0.013697354782422844
+JobRole_Research Scientist,0.011195164092187558
+BusinessTravel_Non-Travel,0.010190257792318445
+JobRole_Healthcare Representative,0.010135463480074542
+JobRole_Manufacturing Director,0.009559205530139841
+JobRole_Research Director,0.00929065360569345
+Gender_Male,0.0062560078368308234
+Gender_Female,0.006125372063468994
+JobRole_Manager,0.005426390371693692
+BusinessTravel_Travel_Rarely,0.005207796329563682
+JobRole_Human Resources,0.0014499415045844766
+Department_Human Resources,0.0012639248104942833
