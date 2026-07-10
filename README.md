@@ -12,6 +12,8 @@
 
 *A professional, interview-ready, end-to-end Machine Learning project with an interactive Streamlit dashboard.*
 
+### 🚀 [**Live Demo →**](https://employee-attrition-analysis-m.streamlit.app/)
+
 </div>
 
 ---
@@ -25,6 +27,8 @@
 3. **Present** results through a modern, dark-themed Streamlit dashboard.
 
 The dashboard gives HR teams actionable insights — not just predictions.
+
+🔗 **Try it live:** [employee-attrition-analysis-m.streamlit.app](https://employee-attrition-analysis-m.streamlit.app/)
 
 ---
 
@@ -183,7 +187,17 @@ Top attrition drivers identified by SHAP:
 
 ---
 
-## ⚙️ Installation
+## 🌐 Live Demo
+
+The dashboard is deployed and publicly accessible on Streamlit Community Cloud:
+
+**👉 [https://employee-attrition-analysis-m.streamlit.app/](https://employee-attrition-analysis-m.streamlit.app/)**
+
+No installation required — open the link and start exploring predictions, model performance, and SHAP explanations directly in your browser.
+
+---
+
+## ⚙️ Installation (Run Locally)
 
 ### 1. Clone the repository
 
@@ -234,7 +248,11 @@ streamlit run app.py
 
 ## 🚀 Deployment
 
-The app can be deployed to **Streamlit Community Cloud** for free:
+The app is deployed on **Streamlit Community Cloud**:
+
+🔗 **Live App:** [https://employee-attrition-analysis-m.streamlit.app/](https://employee-attrition-analysis-m.streamlit.app/)
+
+### Deploy your own copy:
 
 1. Push the repository to GitHub.
 2. Visit [share.streamlit.io](https://share.streamlit.io).
@@ -270,9 +288,13 @@ Built as a professional, end-to-end ML portfolio project.
 - **Dataset**: IBM HR Analytics (Kaggle)
 - **Stack**: Python · Pandas · NumPy · Scikit-learn · Plotly · Streamlit · SHAP · Joblib
 - **Type**: Classification · Explainable AI · HR Analytics
+- **Live Demo**: [employee-attrition-analysis-m.streamlit.app](https://employee-attrition-analysis-m.streamlit.app/)
 
 ---
 
 <div align="center">
+
+### 🌐 [View Live App](https://employee-attrition-analysis-m.streamlit.app/)
+
 ⭐ Star this repo if you found it helpful!
 </div>
