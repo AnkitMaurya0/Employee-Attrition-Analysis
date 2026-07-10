@@ -12,6 +12,8 @@
 
 *A professional, interview-ready, end-to-end Machine Learning project with an interactive Streamlit dashboard.*
 
+**By [Ankit Maurya](https://github.com/AnkitMaurya0)**
+
 ### 🚀 [**Live Demo →**](https://employee-attrition-analysis-m.streamlit.app/)
 
 </div>
@@ -202,7 +204,7 @@ No installation required — open the link and start exploring predictions, mode
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/Employee-Attrition-Analysis.git
+git clone https://github.com/AnkitMaurya0/Employee-Attrition-Analysis.git
 cd Employee-Attrition-Analysis
 ```
 
@@ -283,8 +285,12 @@ This project is licensed under the **MIT License**.
 
 ## 👨‍💻 Author
 
+**Ankit Maurya**
+
 Built as a professional, end-to-end ML portfolio project.
 
+- **GitHub**: [@AnkitMaurya0](https://github.com/AnkitMaurya0)
+- **Repository**: [AnkitMaurya0/Employee-Attrition-Analysis](https://github.com/AnkitMaurya0/Employee-Attrition-Analysis)
 - **Dataset**: IBM HR Analytics (Kaggle)
 - **Stack**: Python · Pandas · NumPy · Scikit-learn · Plotly · Streamlit · SHAP · Joblib
 - **Type**: Classification · Explainable AI · HR Analytics
